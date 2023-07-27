@@ -56,9 +56,9 @@
     </header>
 
     <main class="container-xl py-3">
-        <button class="btn btn-primary" onclick="displayMovies()">Get em</button>
         <h1 class="text-center mt-5 display-3">Popular Movies</h1>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3 justify-content-center justify-content-xl-start" id="movie-list">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3 justify-content-center justify-content-xl-start"
+            id="movie-list">
 
         </div>
     </main>
@@ -93,11 +93,44 @@
                     </p>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="#" class="btn btn-primary">More Info</a>
+                    <button data-bs-target="#movie-modal" data-bs-toggle="modal" class="btn btn-primary"
+                        onclick="showMovieDetails(this)">
+                        More Info
+                    </button>
                 </div>
             </div>
         </div>
     </template>
+
+    <div class="modal" tabindex="-1" id="movie-modal">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <div class="col col-lg-4 col-xl-3">
+                        <img id="thinpic" class="w-100 d-lg-none rounded-top-3" />
+                        <img id="widepic" class="ps-3 py-3 d-none d-lg-block" />
+                    </div>
+                    <div class="col col-lg-8 col-xl-9">
+                        <div class="modal-header">
+                            <h5 class="modal-title"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div><b id="tag"></b></div>
+                            <p id="movie-modal-p"></p>
+                            <div><b>Genre: </b><span id="genre"></span></div>
+                            <div><b>Release Date: </b><span id="date"></span></div>
+                            <div><b>Runtime: </b><span id="runtime"></span> minutes</div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- bootstrap js -->

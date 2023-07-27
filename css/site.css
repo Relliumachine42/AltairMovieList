@@ -115,3 +115,8 @@ footer {
     font-size: 4rem;
     padding-left: .5rem;
 }
+
+#widepic {
+    height: 0;
+    min-height: 100%;
+}
